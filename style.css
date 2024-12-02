@@ -5,12 +5,15 @@
 }
 
 body {
+    margin: 0;
+    padding: 0;
     display: flex;
+    background: linear-gradient(to bottom, #043b42, #064c5c);
+    color: white;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    background-color: #2d3e50;
     font-family: 'Arial', sans-serif;
 }
 
@@ -20,13 +23,183 @@ body {
 }
 
 .star {
-    font-size: 2rem;
+    font-size: 3rem;
     color: gold;
     position: relative;
     z-index: 10;
-    margin-bottom: -25px
+    margin-bottom: -25px;
+    animation: hithere 1s ease infinite;
 }
 
+.hithere {
+    animation: hithere 1s ease infinite;
+  }
+  @keyframes hithere {
+    30% { transform: scale(1.2); }
+    40%, 60% { transform: rotate(-20deg) scale(1.2); }
+    50% { transform: rotate(20deg) scale(1.2); }
+    70% { transform: rotate(0deg) scale(1.2); }
+    100% { transform: scale(1); }
+  }
+
+.utilities {
+    width: 100vw;
+    padding: 1rem;
+    color: white;
+    font-family: 'Lato',sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .title {
+    font-family: 'Cinzel', sans-serif;
+    letter-spacing: 2px;
+    font-size: 2rem;
+    text-align : center;
+    text-shadow: 0 0 30px white;
+  }
+  #Christmas_Lights {
+    height: 100%;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 1000
+  }
+  
+  .light_cord {
+    fill: none;
+    stroke: #174700;
+  }
+  
+  .light_fixture {
+    fill: #134413;
+  }
+  
+  .red_bulb {
+    fill: #CA2128;
+    stroke: #6D6D6D;
+    stroke-miterlimit: 10;
+  }
+  
+  .green_bulb {
+    fill: #2D754A;
+    stroke: #6D6D6D;
+    stroke-miterlimit: 10;
+  }
+  
+  .blue_bulb {
+    fill: #2C3EA8;
+    stroke: #6D6D6D;
+    stroke-miterlimit: 10;
+  }
+  
+  .white_bulb {
+    fill: #F5EED7;
+    stroke: #6D6D6D;
+    stroke-miterlimit: 10;
+  }
+  
+  .gold_bulb {
+    fill: #ffcc5e;
+    stroke: #6D6D6D;
+    stroke-miterlimit: 10;
+  }
+  
+  
+  /* Simply changing the opacity of the SVG fill to create the glow effect for the bulbs */
+  
+  .bulb {
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-name: glow;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-direction: alternate;
+    animation-name: glow;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+  }
+  
+  @-webkit-keyframes glow {
+    0% {
+      fill-opacity: 0.25;
+    }
+    100% {
+      fill-opacity: 1
+    }
+  }
+  
+  @keyframes glow {
+    0% {
+      fill-opacity: 0.25;
+    }
+    100% {
+      fill-opacity: 1.0
+    }
+  }
+  
+  
+  /* Made a set of ten animation delays to create a more random effect of lights blinking.  Simplest way without jumping through SVG hoops. */
+  
+  .blink-1 {
+    -webkit-animation-delay: 0.6s;
+    animation-delay: 0.6s;
+  }
+  
+  .blink-2 {
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+  }
+  
+  .blink-3 {
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+  }
+  
+  .blink-4 {
+    -webkit-animation-delay: 6s;
+    animation-delay: 6s;
+  }
+  
+  .blink-5 {
+    -webkit-animation-delay: 2.5s;
+    animation-delay: 2.5s;
+  }
+  
+  .blink-6 {
+    -webkit-animation-delay: .3s;
+    animation-delay: .3s;
+  }
+  
+  .blink-7 {
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+  }
+  
+  .blink-8 {
+    -webkit-animation-delay: .2s;
+    animation-delay: .2s;
+  }
+  
+  .blink-9 {
+    -webkit-animation-delay: 0.95s;
+    animation-delay: 0.95s;
+  }
+  
+  .blink-10 {
+    -webkit-animation-delay: 1.2s;
+    animation-delay: 1.2s;
+  }
+
+  
 .layer {
     position: relative;
     width: 0;
@@ -63,3 +236,240 @@ body {
     margin-top: -20px;
     border-radius: 4px;
 }
+
+.ball {
+   width: 13px;
+   height: 13px;
+   position: absolute;
+   z-index: auto;
+   border-radius: 50%
+}
+
+.pulse {
+    animation: pulse 1s infinite ease-in-out alternate;
+  }
+  @keyframes pulse {
+    from { transform: scale(0.8); }
+    to { transform: scale(1.2); }
+  }
+
+.layer1 .red{
+    top: 10px;
+    left: 5px;
+    background-color: red;
+    animation: pulse 1s infinite ease-in-out alternate;    
+}
+
+
+.layer1 .green{
+    top: 30px;
+    right: 20px;
+    background-color: green;
+    animation: pulse 1s infinite ease-in-out alternate;
+}
+
+.layer1 .blue{
+    top: 35px;
+    left: 20px;
+    background-color: blue;
+    animation: pulse 1s infinite ease-in-out alternate;
+}
+
+.layer2 .red:nth-child(1){
+    top: 20px;
+    left: 9px;
+    background-color: red;
+    animation: pulse 1s infinite ease-in-out alternate;
+}
+
+.layer2 .green:nth-child(2){
+    top: 30px;
+    right: 10px;
+    background-color: green;
+    animation: pulse 1s infinite ease-in-out alternate;
+}
+
+.layer2 .blue:nth-child(3){
+    top: 60px;
+    right: 30px;
+    background-color: blue;
+    animation: pulse 1s infinite ease-in-out alternate;
+}
+
+.layer2 .red:nth-child(4){
+    top: 70px;
+    left: 10px;
+    background-color: red;
+    animation: pulse 1s infinite ease-in-out alternate;
+}
+
+.layer2 .blue:nth-child(5){
+    top: 70px;
+    left: 10px;
+    background-color: blue;
+    animation: pulse 1s infinite ease-in-out alternate;
+}
+
+.layer2 .green:nth-child(6){
+    top: 50px;
+    left: 30px;
+    background-color: green;
+    animation: pulse 1s infinite ease-in-out alternate;
+}
+
+.layer2 .red:nth-child(7){
+    top: 70px;
+    right: 10px;
+    background-color: red;
+    animation: pulse 1s infinite ease-in-out alternate;
+}
+
+.layer2 .green:nth-child(8){
+    top: 90px;
+    left: 30px;
+    background-color: green;
+    animation: pulse 1s infinite ease-in-out alternate;
+}
+
+.layer2 .blue:nth-child(9){
+    top: 90px;
+    left: 60px;
+    background-color: blue;
+    animation: pulse 1s infinite ease-in-out alternate;
+}
+
+.layer2 .red:nth-child(10){
+    top: 100px;
+    right: 80px;
+    background-color: red;
+    animation: pulse 1s infinite ease-in-out alternate;
+}
+
+.layer2 .blue:nth-child(11){
+    top: 80px;
+    right: 60px;
+    background-color: blue;
+    animation: pulse 1s infinite ease-in-out alternate;
+}
+
+.layer2 .green:nth-child(12){
+    top: 110px;
+    left: 10px;
+    background-color: green;
+    animation: pulse 1s infinite ease-in-out alternate;
+}
+
+/* Layer 3 */
+
+.layer3 .red:nth-child(1){
+    top: 120px;
+    right: 80px;
+    background-color: red;
+    animation: pulse 1s infinite ease-in-out alternate;
+}
+
+.layer3 .blue:nth-child(2){
+    top: 80px;
+    right: 60px;
+    background-color: blue;
+    animation: pulse 1s infinite ease-in-out alternate;
+}
+
+.layer3 .blue:nth-child(3){
+    top: 100px;
+    right: 10px;
+    background-color: blue;
+    animation: pulse 1s infinite ease-in-out alternate;
+}
+
+.layer3 .red:nth-child(4){
+    top: 50px;
+    right: 10px;
+    background-color: red;
+    animation: pulse 1s infinite ease-in-out alternate;
+}
+
+.layer3 .green:nth-child(5){
+    top: 60px;
+    left: 30px;
+    background-color: green;
+    animation: pulse 1s infinite ease-in-out alternate;
+}
+
+.layer3 .green:nth-child(6){
+    top: 120px;
+    left: 30px;
+    background-color: green;
+    animation: pulse 1s infinite ease-in-out alternate;
+}
+
+.layer3 .blue:nth-child(7){
+    top: 130px;
+    left: 60px;
+    background-color: blue;
+    animation: pulse 1s infinite ease-in-out alternate;
+}
+
+.layer3 .blue:nth-child(8){
+    top: 40px;
+    left: 20px;
+    background-color: blue;
+    animation: pulse 1s infinite ease-in-out alternate;
+}
+
+.layer3 .red:nth-child(9){
+    top: 50px;
+    right: 10px;
+    background-color: red;
+    animation: pulse 1s infinite ease-in-out alternate;
+}
+
+.layer3 .green:nth-child(10){
+    top: 120px;
+    left: 30px;
+    background-color: green;
+    animation: pulse 1s infinite ease-in-out alternate;
+}
+
+.layer3 .green:nth-child(11){
+    top: 150px;
+    left: 10px;
+    background-color: green;
+    animation: pulse 1s infinite ease-in-out alternate;
+}
+
+.layer3 .blue:nth-child(12){
+    top: 130px;
+    right: 60px;
+    background-color: blue;
+    animation: pulse 1s infinite ease-in-out alternate;
+}
+
+.layer3 .red:nth-child(13){
+    top: 120px;
+    right: 3px;
+    background-color: red;
+    animation: pulse 1s infinite ease-in-out alternate;
+}
+
+.layer3 .red:nth-child(14){
+    top: 100px;
+    left: 60px;
+    background-color: red;
+    animation: pulse 1s infinite ease-in-out alternate;
+}
+
+.layer3 .green:nth-child(15){
+    top: 20px;
+    right: 10px;
+    background-color: green;
+    animation: pulse 1s infinite ease-in-out alternate;
+}
+
+.ground {
+    background-color: white;
+    height: 30vh;
+    width: 220vh;
+    margin-top: 70vh;
+    border-radius: 100% 100% 0 0;
+  }
